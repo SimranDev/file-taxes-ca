@@ -44,7 +44,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
-                src={isScrolled ? "/file-taxes-light.png" : "/file-taxes-dark.png"}
+                src={isScrolled ? "/ft-logo-light.png" : "/ft-logo-dark.png"}
                 alt="FileTaxes.ca"
                 width={200}
                 height={53}
