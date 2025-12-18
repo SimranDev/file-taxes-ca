@@ -1,21 +1,61 @@
 "use client";
 
-import type { Metadata } from "next";
 import { useState } from "react";
+
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
+interface FormErrors {
+  field: string;
+  message: string;
+}
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
     phone: "",
     message: "",
   });
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [fieldErrors, setFieldErrors] = useState<FormErrors[]>([]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    setStatus("submitting");
+    setErrorMessage("");
+    setFieldErrors([]);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        if (data.errors) {
+          setFieldErrors(data.errors);
+        }
+        setErrorMessage(data.message || "Failed to send message. Please try again.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      setErrorMessage("An unexpected error occurred. Please try again later.");
+      setStatus("error");
+    }
+  };
+
+  const getFieldError = (fieldName: string) => {
+    return fieldErrors.find((err) => err.field === fieldName)?.message;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -61,69 +101,112 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Get in Touch</h2>
               <p className="text-gray-600 mb-6">You can reach us anytime</p>
 
+              {status === "success" && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <p className="text-green-800 font-medium">Message sent successfully!</p>
+                  <p className="text-green-700 text-sm mt-1">Thank you for contacting us. We&apos;ll get back to you soon.</p>
+                </div>
+              )}
+
+              {status === "error" && errorMessage && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-800 font-medium">Failed to send message</p>
+                  <p className="text-red-700 text-sm mt-1">{errorMessage}</p>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Your Name
+                  </label>
                   <input
                     type="text"
-                    name="firstName"
-                    placeholder="First name"
-                    value={formData.firstName}
+                    id="name"
+                    name="name"
+                    value={formData.name}
                     onChange={handleChange}
-                    className="px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                      getFieldError("name") ? "border-red-300 bg-red-50" : "border-gray-200"
+                    }`}
                     required
+                    disabled={status === "submitting"}
                   />
-                  <input
-                    type="text"
-                    name="lastName"
-                    placeholder="Last name"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    className="px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    required
-                  />
+                  {getFieldError("name") && <p className="mt-1 text-sm text-red-600">{getFieldError("name")}</p>}
                 </div>
 
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  required
-                />
-
-                <div className="flex gap-2">
-                  <select className="px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    <option>+1</option>
-                    <option>+44</option>
-                    <option>+91</option>
-                  </select>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address
+                  </label>
                   <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone number"
-                    value={formData.phone}
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
                     onChange={handleChange}
-                    className="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                      getFieldError("email") ? "border-red-300 bg-red-50" : "border-gray-200"
+                    }`}
+                    required
+                    disabled={status === "submitting"}
                   />
+                  {getFieldError("email") && <p className="mt-1 text-sm text-red-600">{getFieldError("email")}</p>}
                 </div>
 
-                <textarea
-                  name="message"
-                  placeholder="How can we help?"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                  required
-                ></textarea>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number
+                  </label>
+                  <div className="flex gap-2">
+                    <select
+                      className="px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      disabled={status === "submitting"}
+                    >
+                      <option>+1</option>
+                      <option>+44</option>
+                      <option>+91</option>
+                    </select>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className={`flex-1 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                        getFieldError("phone") ? "border-red-300 bg-red-50" : "border-gray-200"
+                      }`}
+                      disabled={status === "submitting"}
+                    />
+                  </div>
+                  {getFieldError("phone") && <p className="mt-1 text-sm text-red-600">{getFieldError("phone")}</p>}
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    How Can We Help?
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={4}
+                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none ${
+                      getFieldError("message") ? "border-red-300 bg-red-50" : "border-gray-200"
+                    }`}
+                    required
+                    disabled={status === "submitting"}
+                  ></textarea>
+                  {getFieldError("message") && <p className="mt-1 text-sm text-red-600">{getFieldError("message")}</p>}
+                </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                  disabled={status === "submitting"}
+                  className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit
+                  {status === "submitting" ? "Sending..." : "Submit"}
                 </button>
 
                 <p className="text-xs text-center text-gray-500">
