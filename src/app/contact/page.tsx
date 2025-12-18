@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CONTACT, ADDRESS } from "@/src/constants/contact";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -48,7 +49,7 @@ export default function ContactPage() {
 
       setStatus("success");
       setFormData({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
+    } catch {
       setErrorMessage("An unexpected error occurred. Please try again later.");
       setStatus("error");
     }
@@ -69,7 +70,7 @@ export default function ContactPage() {
     <div>
       <main className="pt-20">
         {/* Hero Section with Contact Form */}
-        <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 px-4">
+        <section className="bg-linear-to-br from-blue-50 to-indigo-50 py-16 px-4">
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
             {/* Left Column - Contact Info */}
             <div>
@@ -81,8 +82,10 @@ export default function ContactPage() {
               </p>
 
               <div className="space-y-4 mb-8">
-                <p className="text-gray-700">info@filetaxes.ca</p>
-                <p className="text-gray-700">1-800-TAX-FILE</p>
+                <p className="text-gray-700">{CONTACT.EMAIL}</p>
+                <a href={CONTACT.PHONE_HREF} className="text-blue-600 hover:text-blue-700 transition-colors block">
+                  {CONTACT.PHONE}
+                </a>
               </div>
 
               {/* Info Cards */}
@@ -253,14 +256,13 @@ export default function ContactPage() {
             <div>
               <h2 className="text-lg font-semibold text-gray-900 mb-4">Our Location</h2>
               <h3 className="text-3xl font-bold text-gray-900 mb-8">Connecting Near and Far</h3>
-
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-4">Headquarters</h4>
-                <p className="text-gray-700">FileTaxes.ca</p>
-                <p className="text-gray-700">Toronto, Canada</p>
-                <p className="text-gray-700">123 Bay Street, Suite 456</p>
-                <p className="text-gray-700">Toronto, ON M5H 2Y4</p>
-                <p className="text-gray-700">Canada</p>
+              <div className="space-y-2">
+                <p className="text-gray-900 font-semibold">{ADDRESS.COMPANY}</p>
+                <p className="text-gray-700">{ADDRESS.STREET}</p>
+                <p className="text-gray-700">
+                  {ADDRESS.CITY}, {ADDRESS.PROVINCE} {ADDRESS.POSTAL_CODE}
+                </p>
+                <p className="text-gray-700">{ADDRESS.COUNTRY}</p>
               </div>
             </div>
           </div>
