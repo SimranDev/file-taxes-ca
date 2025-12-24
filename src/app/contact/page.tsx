@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { CONTACT, ADDRESS } from "@/src/constants/contact";
+import BackButton from "@/src/components/BackButton";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -71,7 +72,10 @@ export default function ContactPage() {
       <main className="pt-20">
         {/* Hero Section with Contact Form */}
         <section className="bg-linear-to-br from-blue-50 to-indigo-50 py-16 px-4">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+          <div className="max-w-7xl mx-auto">
+            <BackButton />
+            
+            <div className="grid md:grid-cols-2 gap-12">
             {/* Left Column - Contact Info */}
             <div>
               <h1 className="text-5xl font-bold text-gray-900 mb-6">Contact Us</h1>
@@ -225,6 +229,7 @@ export default function ContactPage() {
                 </p>
               </form>
             </div>
+          </div>
           </div>
         </section>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import BackButton from "@/src/components/BackButton";
 
 export const metadata: Metadata = {
   title: "Services - FileTaxes.ca",
@@ -94,6 +95,8 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="bg-linear-to-br from-blue-50 via-white to-blue-50 pt-24 pb-16 lg:pt-32 lg:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <BackButton />
+          
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Hero Illustration */}
             <div className="relative order-2 lg:order-1">
