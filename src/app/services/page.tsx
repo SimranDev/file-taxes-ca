@@ -92,12 +92,12 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 pt-24 pb-16 lg:pt-32 lg:pb-24">
+      <section className="bg-linear-to-br from-blue-50 via-white to-blue-50 pt-24 pb-16 lg:pt-32 lg:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Hero Illustration */}
             <div className="relative order-2 lg:order-1">
-              <div className="bg-gradient-to-br from-[#1E4BB8]/10 to-blue-100 rounded-3xl p-8 lg:p-12">
+              <div className="bg-linear-to-br from-[#1E4BB8]/10 to-blue-100 rounded-3xl p-8 lg:p-12">
                 <svg className="w-full max-w-md mx-auto" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
                   {/* Person */}
                   <circle cx="150" cy="80" r="35" fill="#FFE4C4" />
@@ -178,10 +178,10 @@ export default function ServicesPage() {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="group bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl p-8 hover:shadow-xl hover:border-[#1E4BB8]/20 transition-all duration-300"
+                className="group bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-2xl p-8 hover:shadow-xl hover:border-[#1E4BB8]/20 transition-all duration-300"
               >
                 <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0 w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center text-gray-700 group-hover:bg-[#1E4BB8]/10 transition-colors">
+                  <div className="shrink-0 w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center text-gray-700 group-hover:bg-[#1E4BB8]/10 transition-colors">
                     {service.icon}
                   </div>
                   <div className="flex-1">
@@ -197,7 +197,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-[#1E4BB8] to-[#1a3f9e]">
+      <section className="py-16 lg:py-24 bg-linear-to-br from-[#1E4BB8] to-[#1a3f9e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Image/Illustration */}

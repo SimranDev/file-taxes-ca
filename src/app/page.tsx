@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <div className="min-h-screen overflow-hidden">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#FDF8F3] via-white to-[#F0E6FF] pt-20 pb-8 lg:pt-24 lg:pb-12">
+      <section className="relative bg-linear-to-br from-[#FDF8F3] via-white to-[#F0E6FF] pt-20 pb-8 lg:pt-24 lg:pb-12">
         {/* Decorative Elements */}
         <div className="absolute top-20 left-10 w-4 h-4 bg-[#F59E0B] rounded-full opacity-60" />
         <div className="absolute top-40 right-20 w-6 h-6 border-2 border-[#1E4BB8] rounded-full opacity-40" />
@@ -97,9 +97,9 @@ export default function Home() {
                 {/* Main image container with decorative background */}
                 <div className="relative">
                   {/* Decorative blob behind image */}
-                  <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-br from-[#1E4BB8]/20 to-[#F59E0B]/20 rounded-3xl transform rotate-3" />
+                  <div className="absolute -top-4 -right-4 w-full h-full bg-linear-to-br from-[#1E4BB8]/20 to-[#F59E0B]/20 rounded-3xl transform rotate-3" />
 
-                  <div className="relative bg-gradient-to-br from-[#F0E6FF] to-[#FDF8F3] rounded-3xl overflow-hidden">
+                  <div className="relative bg-linear-to-br from-[#F0E6FF] to-[#FDF8F3] rounded-3xl overflow-hidden">
                     <Image
                       src="/hero-img.avif"
                       alt="Professional tax consultant"
@@ -161,7 +161,7 @@ export default function Home() {
             <div className="relative">
               <div className="relative">
                 {/* Background shape */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-[#1E4BB8]/5 to-[#F59E0B]/5 rounded-3xl transform -rotate-2" />
+                <div className="absolute -inset-4 bg-linear-to-br from-[#1E4BB8]/5 to-[#F59E0B]/5 rounded-3xl transform -rotate-2" />
 
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <Image
@@ -204,7 +204,7 @@ export default function Home() {
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 {checklistItems.map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-[#1E4BB8]/10 rounded-full flex items-center justify-center">
+                    <div className="shrink-0 w-6 h-6 bg-[#1E4BB8]/10 rounded-full flex items-center justify-center">
                       <svg className="w-4 h-4 text-[#1E4BB8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
@@ -272,7 +272,7 @@ export default function Home() {
             {services.map((service, index) => (
               <div
                 key={service.id}
-                className="group relative bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100 hover:border-[#1E4BB8]/30 hover:shadow-xl transition-all duration-300"
+                className="group relative bg-linear-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100 hover:border-[#1E4BB8]/30 hover:shadow-xl transition-all duration-300"
               >
                 {/* Service number */}
                 <span className="absolute top-6 right-6 text-6xl font-bold text-gray-100 group-hover:text-[#1E4BB8]/10 transition-colors">
@@ -281,7 +281,7 @@ export default function Home() {
 
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#1E4BB8] to-[#1a3f9e] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-linear-to-br from-[#1E4BB8] to-[#1a3f9e] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     {service.id === "tax-preparation" && (
                       <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
@@ -351,7 +351,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-[#1E4BB8] to-[#152d6e] relative overflow-hidden">
+      <section className="py-16 lg:py-24 bg-linear-to-br from-[#1E4BB8] to-[#152d6e] relative overflow-hidden">
         {/* Decorative circles */}
         <div className="absolute top-10 left-10 w-32 h-32 border border-white/10 rounded-full" />
         <div className="absolute bottom-10 right-10 w-48 h-48 border border-white/10 rounded-full" />
