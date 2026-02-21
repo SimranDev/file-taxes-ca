@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HeroSection from "../components/HeroSection";
 
 const services = [
   {
@@ -42,9 +43,12 @@ export default function Home() {
   return (
     <div className="min-h-screen overflow-hidden">
       {/* Hero Section */}
-      <section className="relative bg-linear-to-br from-[#FDF8F3] via-white to-[#F0E6FF] pt-20 pb-8 lg:pt-24 lg:pb-12">
+      <HeroSection />
+
+      {/* Consultation Section */}
+      <section className="relative bg-linear-to-br from-[#FDF8F3] via-white to-[#F0E6FF] py-16 lg:py-24">
         {/* Decorative Elements */}
-        <div className="absolute top-20 left-10 w-4 h-4 bg-[#F59E0B] rounded-full opacity-60" />
+        <div className="absolute top-20 left-10 w-4 h-4 bg-orange-400 rounded-full opacity-60" />
         <div className="absolute top-40 right-20 w-6 h-6 border-2 border-[#1E4BB8] rounded-full opacity-40" />
         <div className="absolute bottom-20 left-1/4 w-3 h-3 bg-[#1E4BB8] rounded-full opacity-30" />
 
@@ -58,18 +62,18 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Hero Content */}
+            {/* Content */}
             <div className="relative z-10">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                 We Are Here To{" "}
                 <span className="relative inline-block">
-                  <span className="relative z-10 text-[#1E4BB8]">Help You</span>
+                  <span className="relative z-10 text-gray-500">Help You</span>
                   <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
-                    <path d="M2 8c40-6 80-6 120-2s60 4 76 2" stroke="#F59E0B" strokeWidth="4" strokeLinecap="round" />
+                    <path d="M2 8c40-6 80-6 120-2s60 4 76 2" stroke="#ff8904" strokeWidth="4" strokeLinecap="round" />
                   </svg>
                 </span>{" "}
                 On Tax Consultation.
-              </h1>
+              </h2>
               <p className="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
                 We listen and effectively respond to your needs and those of your business. We are experts at translating complex
                 Canadian tax laws into simple solutions.
@@ -78,7 +82,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-[#F59E0B] text-white font-semibold rounded-full hover:bg-[#D97706] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-orange-400 text-white font-semibold rounded-full hover:bg-[#D97706] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                 >
                   Get a Free Consultation
                 </Link>
@@ -91,7 +95,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Hero Image */}
+            {/* Image */}
             <div className="relative">
               <div className="relative z-10">
                 {/* Main image container with decorative background */}
@@ -101,18 +105,17 @@ export default function Home() {
 
                   <div className="relative bg-linear-to-br from-[#F0E6FF] to-[#FDF8F3] rounded-3xl overflow-hidden">
                     <Image
-                      src="/hero-img.avif"
+                      src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=500&h=600&fit=crop"
                       alt="Professional tax consultant"
                       width={500}
                       height={600}
                       className="w-full h-auto object-cover"
-                      priority
                     />
                   </div>
 
                   {/* Floating badge - Tax Expert */}
                   <div className="absolute -left-4 top-1/4 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3">
-                    <div className="w-12 h-12 bg-[#F59E0B]/10 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-orange-400/10 rounded-xl flex items-center justify-center">
                       <svg className="w-6 h-6 text-[#F59E0B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                           strokeLinecap="round"
@@ -174,7 +177,7 @@ export default function Home() {
                 </div>
 
                 {/* Experience badge */}
-                <div className="absolute -bottom-6 -right-6 bg-[#1E4BB8] text-white rounded-2xl p-6 shadow-xl">
+                <div className="absolute -bottom-6 -right-6 bg-gray-700 text-white rounded-2xl p-6 shadow-xl">
                   <p className="text-3xl font-bold">15+</p>
                   <p className="text-sm opacity-90">Years of Excellence</p>
                 </div>
@@ -183,14 +186,14 @@ export default function Home() {
 
             {/* Content */}
             <div>
-              <span className="inline-block px-4 py-2 bg-[#F59E0B]/10 text-[#D97706] font-semibold text-sm rounded-full mb-4">
+              <span className="inline-block px-4 py-2 bg-orange-400/10 text-[#D97706] font-semibold text-sm rounded-full mb-4">
                 Why Choose Us
               </span>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                 We&apos;re{" "}
                 <span className="relative inline-block">
-                  <span className="relative z-10 text-[#1E4BB8]">Experienced</span>
-                  <span className="absolute bottom-1 left-0 w-full h-2 bg-[#F59E0B]/30 -z-0" />
+                  <span className="relative z-10 text-gray-500">Experienced</span>
+                  <span className="absolute bottom-1 left-0 w-full h-2 bg-orange-400 -z-0" />
                 </span>{" "}
                 In Tax Preparation, Business And Financial Services.
               </h2>
@@ -204,8 +207,8 @@ export default function Home() {
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 {checklistItems.map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="shrink-0 w-6 h-6 bg-[#1E4BB8]/10 rounded-full flex items-center justify-center">
-                      <svg className="w-4 h-4 text-[#1E4BB8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="shrink-0 w-6 h-6 bg-orange-400/2 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -231,7 +234,7 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-16 bg-gradient-to-r from-[#E9DFFF] via-[#F0E6FF] to-[#E9DFFF] relative overflow-hidden">
         {/* Decorative elements */}
-        <svg className="absolute top-4 right-8 w-10 h-10 text-[#1E4BB8] opacity-30" viewBox="0 0 24 24" fill="currentColor">
+        <svg className="absolute top-4 right-8 w-10 h-10 text-orange-400 opacity-30" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2l1.5 4.5H18l-3.5 2.7 1.3 4.3L12 10.8l-3.8 2.7 1.3-4.3L6 6.5h4.5z" />
         </svg>
         <div className="absolute bottom-4 left-8 w-4 h-4 border-2 border-[#F59E0B] rounded-full opacity-40" />
@@ -258,7 +261,7 @@ export default function Home() {
       <section id="services" className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-[#1E4BB8]/10 text-[#1E4BB8] font-semibold text-sm rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-orange-400/10 text-orange-400 font-semibold text-sm rounded-full mb-4">
               Our Services
             </span>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Comprehensive Tax & Financial Solutions</h2>
@@ -355,7 +358,7 @@ export default function Home() {
         {/* Decorative circles */}
         <div className="absolute top-10 left-10 w-32 h-32 border border-white/10 rounded-full" />
         <div className="absolute bottom-10 right-10 w-48 h-48 border border-white/10 rounded-full" />
-        <div className="absolute top-1/2 left-1/4 w-4 h-4 bg-[#F59E0B] rounded-full opacity-60" />
+        <div className="absolute top-1/2 left-1/4 w-4 h-4 bg-orange-400 rounded-full opacity-60" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">Ready to Simplify Your Taxes?</h2>
@@ -365,7 +368,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#F59E0B] text-white font-semibold rounded-full hover:bg-[#D97706] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-8 py-4 bg-orange-400 text-white font-semibold rounded-full hover:bg-[#D97706] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               Schedule Free Consultation
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

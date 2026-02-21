@@ -96,7 +96,7 @@ export default function ServicesPage() {
       <section className="bg-linear-to-br from-blue-50 via-white to-blue-50 pt-24 pb-16 lg:pt-32 lg:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <BackButton />
-          
+
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Hero Illustration */}
             <div className="relative order-2 lg:order-1">
@@ -154,7 +154,7 @@ export default function ServicesPage() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-[#1E4BB8] text-white font-semibold rounded-full hover:bg-[#1a3f9e] transition-colors shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-orange-400 text-white font-semibold rounded-full hover:bg-[#1a3f9e] transition-colors shadow-lg hover:shadow-xl"
               >
                 Get Started
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
