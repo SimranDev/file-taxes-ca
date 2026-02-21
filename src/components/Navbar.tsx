@@ -35,7 +35,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-[#1E4BB8] shadow-lg" : "bg-transparent"
+        isScrolled ? "bg-orange-400 shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,11 +44,11 @@ export default function Navbar() {
           <div className="shrink-0">
             <Link href="/" className="flex items-center">
               <Image
-                src={isScrolled ? "/ft-logo-light.png" : "/ft-logo-dark.png"}
+                src={isScrolled ? "/logo-light.png" : "/logo-dark.png"}
                 alt="FileTaxes.ca"
                 width={200}
-                height={53}
-                className="h-10 md:h-14 w-auto"
+                height={50}
+                className="h-10 md:h-12 w-auto"
                 priority
               />
             </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  isScrolled ? "text-white hover:text-gray-200" : "text-gray-900 hover:text-[#1E4BB8]"
+                  isScrolled ? "text-white hover:text-gray-200" : "text-gray-900 hover:text-orange-400"
                 }`}
               >
                 {link.label}
@@ -76,7 +76,7 @@ export default function Navbar() {
               className={`inline-flex items-center justify-center p-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-inset ${
                 isScrolled
                   ? "text-white hover:bg-[#1a3f9e] focus:ring-white"
-                  : "text-gray-900 hover:text-[#1E4BB8] hover:bg-gray-100 focus:ring-[#1E4BB8]"
+                  : "text-gray-900 hover:text-orange-400 hover:bg-gray-100 focus:ring-orange-400 "
               }`}
               aria-expanded="false"
             >
@@ -112,14 +112,14 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className={`md:hidden ${isScrolled ? "bg-[#1E4BB8]" : "bg-white"}`}>
+        <div className={`md:hidden ${isScrolled ? "bg-orantext-orange-400" : "bg-white"}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                  isScrolled ? "text-white hover:bg-[#1a3f9e]" : "text-gray-900 hover:text-[#1E4BB8] hover:bg-gray-50"
+                  isScrolled ? "text-white hover:bg-orange-400" : "text-gray-900 hover:text-orange-400 hover:bg-gray-50"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
