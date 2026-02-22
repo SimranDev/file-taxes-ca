@@ -49,7 +49,7 @@ const pulseGlowAnimation = {
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-linear-to-br from-[#FDF8F3] via-white to-[#F0E6FF] pt-16 pb-12 lg:pt-20 lg:pb-16 overflow-hidden">
+    <section className="relative bg-linear-to-br from-[#FFF7ED] via-white to-[#F0FDFA] pt-16 pb-12 lg:pt-20 lg:pb-16 overflow-hidden">
       {/* Decorative Elements */}
       <motion.div
         className="absolute top-20 left-10 w-4 h-4 bg-orange-400 rounded-full"
@@ -64,7 +64,7 @@ export default function HeroSection() {
         }}
       />
       <motion.div
-        className="absolute top-40 right-20 w-6 h-6 border-2 border-[#1E4BB8] rounded-full"
+        className="absolute top-40 right-20 w-6 h-6 border-2 border-teal-600 rounded-full"
         animate={{
           scale: [1, 1.1, 1],
         }}
@@ -74,7 +74,7 @@ export default function HeroSection() {
           repeat: Infinity,
         }}
       />
-      <motion.div className="absolute bottom-20 left-1/4 w-3 h-3 bg-[#1E4BB8] rounded-full" animate={floatingAnimation} />
+      <motion.div className="absolute bottom-20 left-1/4 w-3 h-3 bg-teal-600 rounded-full" animate={floatingAnimation} />
 
       {/* Star shapes */}
       <motion.svg
@@ -93,7 +93,7 @@ export default function HeroSection() {
         <path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7-6.3-4.6L5.7 21l2.3-7-6-4.6h7.6z" />
       </motion.svg>
       <motion.svg
-        className="absolute bottom-40 right-1/3 w-6 h-6 text-[#1E4BB8] opacity-40"
+        className="absolute bottom-40 right-1/3 w-6 h-6 text-teal-600 opacity-40"
         viewBox="0 0 24 24"
         fill="currentColor"
         animate={{
@@ -122,7 +122,7 @@ export default function HeroSection() {
         }}
       />
       <motion.div
-        className="absolute -bottom-20 -right-20 w-80 h-80 bg-[#1E4BB8]/10 rounded-full blur-3xl"
+        className="absolute -bottom-20 -right-20 w-80 h-80 bg-teal-600/10 rounded-full blur-3xl"
         animate={{
           scale: [1.1, 1, 1.1],
           y: [-10, 10, -10],

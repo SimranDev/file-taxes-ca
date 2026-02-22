@@ -61,7 +61,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  isScrolled ? "text-white hover:text-gray-200" : "text-gray-900 hover:text-orange-400"
+                  isScrolled ? "text-white hover:text-gray-200" : "text-gray-900 hover:text-orange-500"
                 }`}
               >
                 {link.label}
@@ -75,8 +75,8 @@ export default function Navbar() {
               onClick={toggleMobileMenu}
               className={`inline-flex items-center justify-center p-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-inset ${
                 isScrolled
-                  ? "text-white hover:bg-[#1a3f9e] focus:ring-white"
-                  : "text-gray-900 hover:text-orange-400 hover:bg-gray-100 focus:ring-orange-400 "
+                  ? "text-white hover:bg-orange-600 focus:ring-white"
+                  : "text-gray-900 hover:text-orange-500 hover:bg-gray-100 focus:ring-orange-500"
               }`}
               aria-expanded="false"
             >
@@ -112,14 +112,14 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className={`md:hidden ${isScrolled ? "bg-orantext-orange-400" : "bg-white"}`}>
+        <div className={`md:hidden ${isScrolled ? "bg-orange-500" : "bg-white"}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                  isScrolled ? "text-white hover:bg-orange-400" : "text-gray-900 hover:text-orange-400 hover:bg-gray-50"
+                  isScrolled ? "text-white hover:bg-orange-600" : "text-gray-900 hover:text-orange-500 hover:bg-gray-50"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >

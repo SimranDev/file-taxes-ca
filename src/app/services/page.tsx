@@ -14,7 +14,7 @@ const services = [
       <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="8" y="6" width="32" height="36" rx="2" stroke="currentColor" strokeWidth="2" fill="none" />
         <path d="M14 16h20M14 24h20M14 32h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="36" cy="36" r="8" fill="#1E4BB8" />
+        <circle cx="36" cy="36" r="8" fill="#0D9488" />
         <path d="M33 36l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
@@ -29,8 +29,8 @@ const services = [
       <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="6" y="8" width="36" height="32" rx="2" stroke="currentColor" strokeWidth="2" fill="none" />
         <path d="M6 16h36" stroke="currentColor" strokeWidth="2" />
-        <circle cx="24" cy="30" r="8" stroke="#1E4BB8" strokeWidth="2" fill="none" />
-        <path d="M24 26v8M20 30h8" stroke="#1E4BB8" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="24" cy="30" r="8" stroke="#0D9488" strokeWidth="2" fill="none" />
+        <path d="M24 26v8M20 30h8" stroke="#0D9488" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
     title: "Accounting",
@@ -44,7 +44,7 @@ const services = [
       <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 10h28a2 2 0 012 2v28a2 2 0 01-2 2H8V10z" stroke="currentColor" strokeWidth="2" fill="none" />
         <path d="M8 10V6a2 2 0 012-2h24a2 2 0 012 2v4" stroke="currentColor" strokeWidth="2" fill="none" />
-        <path d="M14 18h16M14 26h16M14 34h10" stroke="#1E4BB8" strokeWidth="2" strokeLinecap="round" />
+        <path d="M14 18h16M14 26h16M14 34h10" stroke="#0D9488" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
     title: "Bookkeeping",
@@ -58,7 +58,7 @@ const services = [
       <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="20" cy="20" r="12" stroke="currentColor" strokeWidth="2" fill="none" />
         <path d="M29 29l10 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-        <path d="M16 20l3 3 6-6" stroke="#1E4BB8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M16 20l3 3 6-6" stroke="#0D9488" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
     title: "CRA Audits",
@@ -93,14 +93,14 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-linear-to-br from-blue-50 via-white to-blue-50 pt-24 pb-16 lg:pt-32 lg:pb-24">
+      <section className="bg-linear-to-br from-orange-50 via-white to-teal-50 pt-24 pb-16 lg:pt-32 lg:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <BackButton />
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Hero Illustration */}
             <div className="relative order-2 lg:order-1">
-              <div className="bg-linear-to-br from-[#1E4BB8]/10 to-blue-100 rounded-3xl p-8 lg:p-12">
+              <div className="bg-linear-to-br from-teal-600/10 to-teal-100 rounded-3xl p-8 lg:p-12">
                 <svg className="w-full max-w-md mx-auto" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
                   {/* Person */}
                   <circle cx="150" cy="80" r="35" fill="#FFE4C4" />
@@ -110,12 +110,12 @@ export default function ServicesPage() {
                   <path d="M145 90c5 5 10 5 15 0" stroke="#2D2D2D" strokeWidth="2" strokeLinecap="round" />
 
                   {/* Body */}
-                  <path d="M120 120c0 0 10 80 30 80s30-80 30-80" fill="#1E4BB8" />
-                  <path d="M100 130l20-10v30l-20 10z" fill="#1E4BB8" />
+                  <path d="M120 120c0 0 10 80 30 80s30-80 30-80" fill="#0D9488" />
+                  <path d="M100 130l20-10v30l-20 10z" fill="#0D9488" />
 
                   {/* Document/Clipboard */}
-                  <rect x="220" y="60" width="120" height="160" rx="8" fill="white" stroke="#1E4BB8" strokeWidth="3" />
-                  <rect x="250" y="50" width="60" height="20" rx="4" fill="#1E4BB8" />
+                  <rect x="220" y="60" width="120" height="160" rx="8" fill="white" stroke="#0D9488" strokeWidth="3" />
+                  <rect x="250" y="50" width="60" height="20" rx="4" fill="#0D9488" />
                   <path d="M240 100h80M240 130h80M240 160h60" stroke="#E5E7EB" strokeWidth="8" strokeLinecap="round" />
 
                   {/* Checkmark */}
@@ -123,8 +123,8 @@ export default function ServicesPage() {
                   <path d="M308 180l8 8 16-16" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 
                   {/* Calculator */}
-                  <rect x="60" y="180" width="70" height="90" rx="6" fill="#F3F4F6" stroke="#1E4BB8" strokeWidth="2" />
-                  <rect x="70" y="190" width="50" height="20" rx="2" fill="#1E4BB8" />
+                  <rect x="60" y="180" width="70" height="90" rx="6" fill="#F3F4F6" stroke="#0D9488" strokeWidth="2" />
+                  <rect x="70" y="190" width="50" height="20" rx="2" fill="#0D9488" />
                   <circle cx="80" cy="225" r="6" fill="#D1D5DB" />
                   <circle cx="95" cy="225" r="6" fill="#D1D5DB" />
                   <circle cx="110" cy="225" r="6" fill="#D1D5DB" />
@@ -133,18 +133,16 @@ export default function ServicesPage() {
                   <circle cx="110" cy="245" r="6" fill="#22C55E" />
 
                   {/* Floating elements */}
-                  <circle cx="50" cy="100" r="8" fill="#1E4BB8" opacity="0.3" />
-                  <circle cx="350" cy="250" r="12" fill="#1E4BB8" opacity="0.2" />
-                  <path d="M370 80l10-10M380 80l-10-10" stroke="#1E4BB8" strokeWidth="2" opacity="0.4" />
+                  <circle cx="50" cy="100" r="8" fill="#0D9488" opacity="0.3" />
+                  <circle cx="350" cy="250" r="12" fill="#0D9488" opacity="0.2" />
+                  <path d="M370 80l10-10M380 80l-10-10" stroke="#0D9488" strokeWidth="2" opacity="0.4" />
                 </svg>
               </div>
             </div>
 
             {/* Hero Content */}
             <div className="order-1 lg:order-2">
-              <span className="inline-block text-[#1E4BB8] font-semibold text-sm uppercase tracking-wider mb-4">
-                Our Services
-              </span>
+              <span className="inline-block text-teal-600 font-semibold text-sm uppercase tracking-wider mb-4">Our Services</span>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Expert Tax & Accounting Services
               </h1>
@@ -154,7 +152,7 @@ export default function ServicesPage() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-orange-400 text-white font-semibold rounded-full hover:bg-[#1a3f9e] transition-colors shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition-colors shadow-lg hover:shadow-xl"
               >
                 Get Started
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -181,15 +179,15 @@ export default function ServicesPage() {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="group bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-2xl p-8 hover:shadow-xl hover:border-[#1E4BB8]/20 transition-all duration-300"
+                className="group bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-2xl p-8 hover:shadow-xl hover:border-teal-600/20 transition-all duration-300"
               >
                 <div className="flex items-start gap-6">
-                  <div className="shrink-0 w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center text-gray-700 group-hover:bg-[#1E4BB8]/10 transition-colors">
+                  <div className="shrink-0 w-16 h-16 bg-teal-50 rounded-xl flex items-center justify-center text-gray-700 group-hover:bg-teal-600/10 transition-colors">
                     {service.icon}
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-gray-900 mb-1">{service.title}</h3>
-                    <span className="inline-block text-[#1E4BB8] text-sm font-medium mb-3">{service.subtitle}</span>
+                    <span className="inline-block text-teal-600 text-sm font-medium mb-3">{service.subtitle}</span>
                     <p className="text-gray-600 leading-relaxed">{service.description}</p>
                   </div>
                 </div>
@@ -200,7 +198,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 lg:py-24 bg-linear-to-br from-[#1E4BB8] to-[#1a3f9e]">
+      <section className="py-16 lg:py-24 bg-linear-to-br from-teal-600 to-teal-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Image/Illustration */}
@@ -236,7 +234,7 @@ export default function ServicesPage() {
             {/* Content */}
             <div className="text-white">
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">Relax, You&apos;re in Good Hands</h2>
-              <p className="text-blue-100 text-lg mb-10 leading-relaxed">
+              <p className="text-teal-100 text-lg mb-10 leading-relaxed">
                 With years of experience serving Canadian businesses and individuals, we understand the complexities of Canadian
                 tax laws and are committed to providing exceptional service.
               </p>
@@ -245,7 +243,7 @@ export default function ServicesPage() {
                 {features.map((feature, index) => (
                   <div key={index}>
                     <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                    <p className="text-blue-100 text-sm leading-relaxed">{feature.description}</p>
+                    <p className="text-teal-100 text-sm leading-relaxed">{feature.description}</p>
                   </div>
                 ))}
               </div>
@@ -265,7 +263,7 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#1E4BB8] text-white font-semibold rounded-full hover:bg-[#1a3f9e] transition-colors shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center px-8 py-4 bg-teal-600 text-white font-semibold rounded-full hover:bg-teal-700 transition-colors shadow-lg hover:shadow-xl"
             >
               Contact Us
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -274,7 +272,7 @@ export default function ServicesPage() {
             </Link>
             <a
               href="tel:+1234567890"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1E4BB8] font-semibold rounded-full border-2 border-[#1E4BB8] hover:bg-[#1E4BB8] hover:text-white transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-full border-2 border-teal-600 hover:bg-teal-600 hover:text-white transition-colors"
             >
               <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path

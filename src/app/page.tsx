@@ -46,17 +46,17 @@ export default function Home() {
       <HeroSection />
 
       {/* Consultation Section */}
-      <section className="relative bg-linear-to-br from-[#FDF8F3] via-white to-[#F0E6FF] py-16 lg:py-24">
+      <section className="relative bg-linear-to-br from-[#FFF7ED] via-white to-[#F0FDFA] py-16 lg:py-24">
         {/* Decorative Elements */}
         <div className="absolute top-20 left-10 w-4 h-4 bg-orange-400 rounded-full opacity-60" />
-        <div className="absolute top-40 right-20 w-6 h-6 border-2 border-[#1E4BB8] rounded-full opacity-40" />
-        <div className="absolute bottom-20 left-1/4 w-3 h-3 bg-[#1E4BB8] rounded-full opacity-30" />
+        <div className="absolute top-40 right-20 w-6 h-6 border-2 border-teal-600 rounded-full opacity-40" />
+        <div className="absolute bottom-20 left-1/4 w-3 h-3 bg-teal-600 rounded-full opacity-30" />
 
         {/* Decorative star shapes */}
         <svg className="absolute top-32 right-10 w-8 h-8 text-[#F59E0B] opacity-60" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7-6.3-4.6L5.7 21l2.3-7-6-4.6h7.6z" />
         </svg>
-        <svg className="absolute bottom-40 right-1/3 w-6 h-6 text-[#1E4BB8] opacity-40" viewBox="0 0 24 24" fill="currentColor">
+        <svg className="absolute bottom-40 right-1/3 w-6 h-6 text-teal-600 opacity-40" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7-6.3-4.6L5.7 21l2.3-7-6-4.6h7.6z" />
         </svg>
 
@@ -88,7 +88,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-full border-2 border-gray-200 hover:border-[#1E4BB8] hover:text-[#1E4BB8] transition-all duration-300"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-full border-2 border-gray-200 hover:border-teal-600 hover:text-teal-600 transition-all duration-300"
                 >
                   View Our Services
                 </Link>
@@ -101,9 +101,9 @@ export default function Home() {
                 {/* Main image container with decorative background */}
                 <div className="relative">
                   {/* Decorative blob behind image */}
-                  <div className="absolute -top-4 -right-4 w-full h-full bg-linear-to-br from-[#1E4BB8]/20 to-[#F59E0B]/20 rounded-3xl transform rotate-3" />
+                  <div className="absolute -top-4 -right-4 w-full h-full bg-linear-to-br from-teal-600/20 to-orange-500/20 rounded-3xl transform rotate-3" />
 
-                  <div className="relative bg-linear-to-br from-[#F0E6FF] to-[#FDF8F3] rounded-3xl overflow-hidden">
+                  <div className="relative bg-linear-to-br from-[#F0FDFA] to-[#FFF7ED] rounded-3xl overflow-hidden">
                     <Image
                       src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=500&h=600&fit=crop"
                       alt="Professional tax consultant"
@@ -133,8 +133,8 @@ export default function Home() {
 
                   {/* Floating badge - Calculator */}
                   <div className="absolute -right-2 bottom-1/4 bg-white rounded-2xl shadow-xl p-4">
-                    <div className="w-12 h-12 bg-[#1E4BB8]/10 rounded-xl flex items-center justify-center">
-                      <svg className="w-6 h-6 text-[#1E4BB8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 bg-teal-600/10 rounded-xl flex items-center justify-center">
+                      <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -154,7 +154,7 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <section className="py-16 lg:py-24 bg-white relative">
         {/* Decorative diamond */}
-        <svg className="absolute top-10 right-10 w-8 h-8 text-[#1E4BB8] opacity-20" viewBox="0 0 24 24" fill="currentColor">
+        <svg className="absolute top-10 right-10 w-8 h-8 text-teal-600 opacity-20" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2L2 12l10 10 10-10L12 2z" />
         </svg>
 
@@ -164,7 +164,7 @@ export default function Home() {
             <div className="relative">
               <div className="relative">
                 {/* Background shape */}
-                <div className="absolute -inset-4 bg-linear-to-br from-[#1E4BB8]/5 to-[#F59E0B]/5 rounded-3xl transform -rotate-2" />
+                <div className="absolute -inset-4 bg-linear-to-br from-teal-600/5 to-orange-500/5 rounded-3xl transform -rotate-2" />
 
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <Image
@@ -219,7 +219,7 @@ export default function Home() {
 
               <Link
                 href="/services"
-                className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-[#1E4BB8] transition-all duration-300"
+                className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-teal-600 transition-all duration-300"
               >
                 Explore More About Us
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -232,7 +232,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-[#E9DFFF] via-[#F0E6FF] to-[#E9DFFF] relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-r from-[#FFF7ED] via-[#FFFBEB] to-[#FFF7ED] relative overflow-hidden">
         {/* Decorative elements */}
         <svg className="absolute top-4 right-8 w-10 h-10 text-orange-400 opacity-30" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2l1.5 4.5H18l-3.5 2.7 1.3 4.3L12 10.8l-3.8 2.7 1.3-4.3L6 6.5h4.5z" />
@@ -261,7 +261,7 @@ export default function Home() {
       <section id="services" className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-orange-400/10 text-orange-400 font-semibold text-sm rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-orange-500/10 text-orange-500 font-semibold text-sm rounded-full mb-4">
               Our Services
             </span>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Comprehensive Tax & Financial Solutions</h2>
@@ -275,16 +275,16 @@ export default function Home() {
             {services.map((service, index) => (
               <div
                 key={service.id}
-                className="group relative bg-linear-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100 hover:border-[#1E4BB8]/30 hover:shadow-xl transition-all duration-300"
+                className="group relative bg-linear-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100 hover:border-teal-600/30 hover:shadow-xl transition-all duration-300"
               >
                 {/* Service number */}
-                <span className="absolute top-6 right-6 text-6xl font-bold text-gray-100 group-hover:text-[#1E4BB8]/10 transition-colors">
+                <span className="absolute top-6 right-6 text-6xl font-bold text-gray-100 group-hover:text-teal-600/10 transition-colors">
                   0{index + 1}
                 </span>
 
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className="w-14 h-14 bg-linear-to-br from-[#1E4BB8] to-[#1a3f9e] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-linear-to-br from-teal-600 to-teal-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     {service.id === "tax-preparation" && (
                       <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
@@ -327,14 +327,14 @@ export default function Home() {
                     )}
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#1E4BB8] transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-teal-600 transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-4">{service.description}</p>
 
                   <Link
                     href="/services"
-                    className="inline-flex items-center text-[#1E4BB8] font-semibold group-hover:text-[#F59E0B] transition-colors"
+                    className="inline-flex items-center text-teal-600 font-semibold group-hover:text-orange-500 transition-colors"
                   >
                     Learn More
                     <svg
@@ -354,7 +354,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-linear-to-br from-[#1E4BB8] to-[#152d6e] relative overflow-hidden">
+      <section className="py-16 lg:py-24 bg-linear-to-br from-teal-600 to-teal-800 relative overflow-hidden">
         {/* Decorative circles */}
         <div className="absolute top-10 left-10 w-32 h-32 border border-white/10 rounded-full" />
         <div className="absolute bottom-10 right-10 w-48 h-48 border border-white/10 rounded-full" />
@@ -362,7 +362,7 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">Ready to Simplify Your Taxes?</h2>
-          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-teal-100 mb-10 max-w-2xl mx-auto">
             Get a free consultation with our expert team. Let us handle the complexity while you focus on what matters most.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -377,7 +377,7 @@ export default function Home() {
             </Link>
             <a
               href="tel:+1234567890"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white hover:text-[#1E4BB8] transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white hover:text-teal-600 transition-all duration-300"
             >
               <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
