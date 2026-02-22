@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CONTACT, ADDRESS } from "@/src/constants/contact";
+import { CONTACT } from "@/src/constants/contact";
 import BackButton from "@/src/components/BackButton";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -228,46 +228,6 @@ export default function ContactPage() {
                     .
                   </p>
                 </form>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Location Section */}
-        <section className="py-16 px-4">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            {/* Map */}
-            <div className="bg-gray-100 rounded-2xl overflow-hidden h-96 relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        fillRule="evenodd"
-                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <p className="font-semibold text-gray-900">FileTaxes.ca</p>
-                  <p className="text-sm text-gray-600">Your Tax Solutions Partner</p>
-                  <p className="text-sm text-gray-500 mt-2">Toronto, Ontario, Canada</p>
-                  <button className="mt-4 text-orange-600 text-sm font-medium hover:underline">Open Google Maps →</button>
-                </div>
-              </div>
-            </div>
-
-            {/* Location Info */}
-            <div>
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">Our Location</h2>
-              <h3 className="text-3xl font-bold text-gray-900 mb-8">Connecting Near and Far</h3>
-              <div className="space-y-2">
-                <p className="text-gray-900 font-semibold">{ADDRESS.COMPANY}</p>
-                <p className="text-gray-700">{ADDRESS.STREET}</p>
-                <p className="text-gray-700">
-                  {ADDRESS.CITY}, {ADDRESS.PROVINCE} {ADDRESS.POSTAL_CODE}
-                </p>
-                <p className="text-gray-700">{ADDRESS.COUNTRY}</p>
               </div>
             </div>
           </div>

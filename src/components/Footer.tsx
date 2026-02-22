@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CONTACT, ADDRESS } from "@/src/constants/contact";
+import { CONTACT } from "@/src/constants/contact";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4 md:col-span-2 lg:col-span-1">
             <div>
-              <h3 className="text-xl font-bold text-white mb-2">{ADDRESS.COMPANY}</h3>
+              <h3 className="text-xl font-bold text-white mb-2">{CONTACT.COMPANY}</h3>
               <p className="text-white text-sm leading-relaxed">
                 Your trusted partner for professional Canadian tax filing and accounting services. We simplify complex tax laws
                 into practical solutions.
@@ -48,22 +48,6 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-start">
-                <svg className="w-5 h-5 text-white mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span className="text-white">
-                  {ADDRESS.STREET}
-                  <br />
-                  {ADDRESS.CITY}, {ADDRESS.PROVINCE} {ADDRESS.POSTAL_CODE}
-                </span>
-              </li>
               <li className="flex items-center">
                 <svg className="w-5 h-5 text-white mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -97,7 +81,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/20 py-6">
           <p className="text-white text-sm text-center">
-            © {currentYear} {ADDRESS.COMPANY}. All rights reserved.
+            © {currentYear} {CONTACT.COMPANY}. All rights reserved.
           </p>
         </div>
       </div>
