@@ -10,38 +10,38 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 15 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.4,
       ease: [0.22, 1, 0.36, 1] as Easing,
     },
   },
 };
 
 const floatingAnimation = {
-  y: [-5, 5, -5],
+  y: [-3, 3, -3],
   transition: {
-    duration: 6,
+    duration: 8,
     ease: "easeInOut" as Easing,
     repeat: Infinity,
   },
 };
 
 const pulseGlowAnimation = {
-  scale: [1, 1.02, 1],
-  boxShadow: ["0 0 0 0 rgba(249, 115, 22, 0.3)", "0 0 0 10px rgba(249, 115, 22, 0)", "0 0 0 0 rgba(249, 115, 22, 0)"],
+  scale: [1, 1.01, 1],
+  boxShadow: ["0 0 0 0 rgba(249, 115, 22, 0.2)", "0 0 0 6px rgba(249, 115, 22, 0)", "0 0 0 0 rgba(249, 115, 22, 0)"],
   transition: {
-    duration: 3,
+    duration: 4,
     ease: "easeInOut" as Easing,
     repeat: Infinity,
   },
@@ -49,27 +49,16 @@ const pulseGlowAnimation = {
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-linear-to-br from-[#FFF7ED] via-white to-[#F0FDFA] pt-16 pb-12 lg:pt-20 lg:pb-16 overflow-hidden">
+    <section className="relative bg-linear-to-br from-[#FFF7ED] via-white to-[#F0FDFA] pt-20 pb-12 lg:pt-20 lg:pb-16 overflow-hidden">
       {/* Decorative Elements */}
-      <motion.div
-        className="absolute top-20 left-10 w-4 h-4 bg-orange-400 rounded-full"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.6, 0.8, 0.6],
-        }}
-        transition={{
-          duration: 5,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
-      />
+
       <motion.div
         className="absolute top-40 right-20 w-6 h-6 border-2 border-teal-600 rounded-full"
         animate={{
-          scale: [1, 1.1, 1],
+          scale: [1, 1.05, 1],
         }}
         transition={{
-          duration: 8,
+          duration: 12,
           ease: "easeInOut",
           repeat: Infinity,
         }}
@@ -85,7 +74,7 @@ export default function HeroSection() {
           rotate: [0, 360],
         }}
         transition={{
-          duration: 20,
+          duration: 30,
           ease: "linear",
           repeat: Infinity,
         }}
@@ -100,7 +89,7 @@ export default function HeroSection() {
           rotate: [360, 0],
         }}
         transition={{
-          duration: 25,
+          duration: 35,
           ease: "linear",
           repeat: Infinity,
         }}
@@ -112,11 +101,11 @@ export default function HeroSection() {
       <motion.div
         className="absolute -top-20 -left-20 w-64 h-64 bg-orange-400/20 rounded-full blur-3xl"
         animate={{
-          scale: [1, 1.1, 1],
-          x: [-10, 10, -10],
+          scale: [1, 1.05, 1],
+          x: [-5, 5, -5],
         }}
         transition={{
-          duration: 12,
+          duration: 16,
           ease: "easeInOut",
           repeat: Infinity,
         }}
@@ -124,17 +113,17 @@ export default function HeroSection() {
       <motion.div
         className="absolute -bottom-20 -right-20 w-80 h-80 bg-teal-600/10 rounded-full blur-3xl"
         animate={{
-          scale: [1.1, 1, 1.1],
-          y: [-10, 10, -10],
+          scale: [1.05, 1, 1.05],
+          y: [-5, 5, -5],
         }}
         transition={{
-          duration: 15,
+          duration: 18,
           ease: "easeInOut",
           repeat: Infinity,
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left Content */}
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
@@ -146,10 +135,10 @@ export default function HeroSection() {
               <motion.span
                 className="w-2 h-2 bg-orange-500 rounded-full"
                 animate={{
-                  scale: [1, 1.2, 1],
+                  scale: [1, 1.1, 1],
                 }}
                 transition={{
-                  duration: 2,
+                  duration: 3,
                   repeat: Infinity,
                 }}
               />
@@ -270,7 +259,7 @@ export default function HeroSection() {
             <motion.div animate={pulseGlowAnimation} className="rounded-full">
               <Link href="/contact">
                 <motion.div
-                  className="group relative inline-flex items-center gap-3 px-10 py-5 bg-orange-500 text-white font-bold text-lg rounded-full shadow-xl cursor-pointer"
+                  className="group relative inline-flex items-center gap-2 sm:gap-3 px-6 py-3 sm:px-10 sm:py-5 bg-orange-500 text-white font-bold text-base sm:text-lg rounded-full shadow-xl cursor-pointer"
                   whileHover={{
                     scale: 1.05,
                     backgroundColor: "#ea580c",
@@ -281,15 +270,15 @@ export default function HeroSection() {
                 >
                   <span>Get a Free Consultation</span>
                   <motion.svg
-                    className="w-6 h-6"
+                    className="w-5 h-5 sm:w-6 sm:h-6"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                     animate={{
-                      x: [0, 3, 0],
+                      x: [0, 2, 0],
                     }}
                     transition={{
-                      duration: 2,
+                      duration: 3,
                       ease: "easeInOut",
                       repeat: Infinity,
                     }}

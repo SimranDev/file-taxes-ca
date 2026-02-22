@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CONTACT } from "@/src/constants/contact";
+import { CONTACT, TEAM } from "@/src/constants/contact";
 import BackButton from "@/src/components/BackButton";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -90,16 +90,6 @@ export default function ContactPage() {
                   <a href={CONTACT.PHONE_HREF} className="text-orange-600 hover:text-orange-700 transition-colors block">
                     {CONTACT.PHONE}
                   </a>
-                </div>
-
-                {/* Info Cards */}
-                <div className="space-y-6 mt-12">
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Customer Support</h3>
-                    <p className="text-sm text-gray-600">
-                      Our support team is available around the clock to address any concerns or queries you may have.
-                    </p>
-                  </div>
                 </div>
               </div>
 
@@ -228,6 +218,78 @@ export default function ContactPage() {
                     .
                   </p>
                 </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Cards Section */}
+        <section className="py-16 px-4 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Team Member Cards */}
+              {TEAM.map((member) => (
+                <div key={member.name} className="bg-gray-50 rounded-2xl p-8 text-center">
+                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">{member.name}</h3>
+                  <a href={member.phoneHref} className="text-gray-600 hover:text-orange-600 transition-colors">
+                    {member.phone}
+                  </a>
+                </div>
+              ))}
+
+              {/* Email Card */}
+              <div className="bg-gray-50 rounded-2xl p-8 text-center">
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Email Us</h3>
+                <a href={`mailto:${CONTACT.EMAIL}`} className="text-gray-600 hover:text-orange-600 transition-colors">
+                  {CONTACT.EMAIL}
+                </a>
+              </div>
+            </div>
+
+            {/* Service Info Bar */}
+            <div className="flex flex-wrap justify-center gap-8 mt-12 text-gray-600">
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>{CONTACT.SERVICE_AREA}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span>{CONTACT.BUSINESS_HOURS}</span>
               </div>
             </div>
           </div>
