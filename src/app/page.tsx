@@ -81,12 +81,6 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-orange-400 text-white font-semibold rounded-full hover:bg-[#D97706] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-                >
-                  Get a Free Consultation
-                </Link>
-                <Link
                   href="/services"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-full border-2 border-gray-200 hover:border-teal-600 hover:text-teal-600 transition-all duration-300"
                 >
