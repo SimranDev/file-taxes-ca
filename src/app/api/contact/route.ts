@@ -28,7 +28,7 @@ export async function POST(request: Request) {
           success: false,
           message: "Email service is not configured. Please contact the administrator.",
         },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -49,10 +49,21 @@ export async function POST(request: Request) {
 
     const { name, email, phone, message } = result.data;
 
+    // inside your POST function
+    const receiversString = process.env.CONTACT_EMAIL || "info@filetaxes.ca";
+
+    // This specific chain is the "bulletproof" way to format the array
+    const receivers = receiversString
+      .split(",") // Split by comma
+      .map((e) => e.trim()) // Remove hidden spaces/new lines
+      .filter((e) => e !== ""); // Remove any empty strings (fixes trailing comma issue)
+
+    console.log("Sending to:", receivers); // Debug this in your terminal!
+
     // Send email via Resend
     const { error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || "Contact Form <onboarding@resend.dev>",
-      to: [process.env.CONTACT_EMAIL || "info@filetaxes.ca"],
+      to: receivers,
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       text: formatPlainTextEmail({ name, email, phone, message }),
@@ -69,7 +80,7 @@ export async function POST(request: Request) {
     console.error("Contact form error:", error);
     return NextResponse.json(
       { success: false, message: "An unexpected error occurred. Please try again later." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -103,7 +114,7 @@ function formatHtmlEmail({ name, email, phone, message }: { name: string; email:
   <title>New Contact Form Submission</title>
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 10px 10px 0 0;">
+  <div style="background: linear-gradient(135deg, #ff8904 0%, #ff6900 100%); padding: 30px; border-radius: 10px 10px 0 0;">
     <h1 style="color: white; margin: 0; font-size: 24px;">New Contact Form Submission</h1>
   </div>
   
