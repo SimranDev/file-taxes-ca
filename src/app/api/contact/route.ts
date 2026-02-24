@@ -86,7 +86,17 @@ export async function POST(request: Request) {
 }
 
 // Format plain text email
-function formatPlainTextEmail({ name, email, phone, message }: { name: string; email: string; phone?: string; message: string }) {
+function formatPlainTextEmail({
+  name,
+  email,
+  phone,
+  message,
+}: {
+  name: string;
+  email: string;
+  phone?: string;
+  message?: string;
+}) {
   return `
 New Contact Form Submission
 ============================
@@ -96,7 +106,7 @@ Email: ${email}
 Phone: ${phone || "Not provided"}
 
 Message:
-${message}
+${message || "No message provided"}
 
 ---
 This message was sent from the FileTaxes.ca contact form.
@@ -104,7 +114,7 @@ This message was sent from the FileTaxes.ca contact form.
 }
 
 // Format HTML email
-function formatHtmlEmail({ name, email, phone, message }: { name: string; email: string; phone?: string; message: string }) {
+function formatHtmlEmail({ name, email, phone, message }: { name: string; email: string; phone?: string; message?: string }) {
   return `
 <!DOCTYPE html>
 <html>
@@ -153,7 +163,7 @@ function formatHtmlEmail({ name, email, phone, message }: { name: string; email:
     <div style="margin-top: 24px;">
       <strong style="color: #6b7280;">Message:</strong>
       <div style="background: white; padding: 16px; border-radius: 8px; margin-top: 8px; border: 1px solid #e5e7eb;">
-        ${escapeHtml(message).replace(/\n/g, "<br>")}
+        ${message ? escapeHtml(message).replace(/\n/g, "<br>") : '<span style="color: #9ca3af;">No message provided</span>'}
       </div>
     </div>
   </div>
