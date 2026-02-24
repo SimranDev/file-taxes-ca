@@ -192,7 +192,6 @@ export default function ContactPage() {
                       className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none ${
                         getFieldError("message") ? "border-red-300 bg-red-50" : "border-gray-200"
                       }`}
-                      required
                       disabled={status === "submitting"}
                     ></textarea>
                     {getFieldError("message") && <p className="mt-1 text-sm text-red-600">{getFieldError("message")}</p>}
